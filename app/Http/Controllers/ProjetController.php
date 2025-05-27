@@ -55,7 +55,7 @@ class ProjetController extends Controller
     public function edit($id)
     {
         $projet = Projet::find($id);
-        return Inertia::render('projets/edit_projet');
+        return Inertia::render('projets/edit_projet', ['projet' => $projet]);
     }
 
     /**

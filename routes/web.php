@@ -17,28 +17,21 @@ Route::get('/projet/create', [ProjetController::class, 'create']);
 Route::post('/projet/post', [ProjetController::class, 'store']);
 Route::get('/projet/edit/{id}', [ProjetController::class, 'edit']);
 Route::put('/projet/update/{id}', [ProjetController::class, 'update']);
-Route::delete('/projet/delete/{id}', [ProjetController::class, 'delete']);
+Route::delete('/projet/delete/{id}', [ProjetController::class, 'destroy']);
 
 //Skill
 Route::get('/skill/create', [SkillController::class, 'create']);
 Route::post('/skill/post', [SkillController::class, 'store']);
 Route::get('/skill/edit/{id}', [SkillController::class, 'edit']);
 Route::put('/skill/update/{id}', [SkillController::class, 'update']);
-Route::delete('/skill/delete/{id}', [SkillController::class, 'delete']);
+Route::delete('/skill/delete/{id}', [SkillController::class, 'destroy']);
 
 //Experience
 Route::get('/experience/create', [ExperienceController::class, 'create']);
 Route::post('/experience/post', [ExperienceController::class, 'store']);
 Route::get('/experience/edit/{id}', [ExperienceController::class, 'edit']);
 Route::put('/experience/update/{id}', [ExperienceController::class, 'update']);
-Route::delete('/experience/delete/{id}', [ExperienceController::class, 'delete']);
-
-
-
-
-
-// FAIRE LA ROUTE POUR LES INDEX ECPERIENCE SKILL ET PROJET DEMANDER COMMENT FAIRE !!!!!!
-
+Route::delete('/experience/delete/{id}', [ExperienceController::class, 'destroy']);
 
 
 
