@@ -36,7 +36,6 @@ class ExperienceController extends Controller
         $experience->entreprise = $request->entreprise;
         $experience->date_debut = $request->date_debut;
         $experience->date_fin = $request->date_fin;
-        $experience->description = $request->description;
         $experience->utilisateur_id = 1;
         $experience->save();
     }
@@ -55,7 +54,7 @@ class ExperienceController extends Controller
     public function edit($id)
     {
         $experience = Experience::find($id);
-        return Inertia::render('experiences/edit_experience');
+        return Inertia::render('experiences/edit_experience', ['experience' => $experience]);
     }
 
     /**
@@ -68,7 +67,6 @@ class ExperienceController extends Controller
         $experience->entreprise = $request->entreprise;
         $experience->date_debut = $request->date_debut;
         $experience->date_fin = $request->date_fin;
-        $experience->description = $request->description;
         $experience->utilisateur_id = 1;
         $experience->save();
     }

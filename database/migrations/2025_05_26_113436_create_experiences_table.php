@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('titre');
             $table->string('entreprise');
-            $table->date('date_debut')->nullable();
-            $table->date('date_fin')->nullable();
+            $table->date('date_debut');
+            $table->date('date_fin');
             $table->foreignId('utilisateur_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
