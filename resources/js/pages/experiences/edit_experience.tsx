@@ -5,9 +5,9 @@ export default function EditExperience({ experience }) {
 
     const [values, setValues] = useState({
         titre: experience.titre,
-        description: experience.entreprise,
-        lien_github: experience.date_debut,
-        lien_demo: experience.date_fin,
+        entreprise: experience.entreprise,
+        date_debut: experience.date_debut,
+        date_fin: experience.date_fin,
         utilisateur_id: experience.utilisateur_id
     })
 
@@ -23,13 +23,13 @@ export default function EditExperience({ experience }) {
 
             <form onSubmit={modif}>
                 <label htmlFor="">Titre</label>
-                <input className="border" type="text" name="titre" onChange={(e) => setValues({ ...values, titre: e.target.value })} />
+                <input className="border" type="text" name="titre" value={values.titre} onChange={(e) => setValues({ ...values, titre: e.target.value })} />
                 <label htmlFor="">Entreprise</label>
-                <input className="border" type="text" name="entreprise" onChange={(e) => setValues({ ...values, entreprise: e.target.value })} />
+                <input className="border" type="text" name="entreprise" value={values.entreprise} onChange={(e) => setValues({ ...values, entreprise: e.target.value })} />
                 <label htmlFor="">Date debut</label>
-                <input className="border" type="date" name="date_debut" onChange={(e) => setValues({ ...values, date_debut: e.target.value })} />
+                <input className="border" type="date" name="date_debut" value={values.date_debut} onChange={(e) => setValues({ ...values, date_debut: e.target.value })} />
                 <label htmlFor="">Date fin</label>
-                <input className="border" type="date" name="date_fin" onChange={(e) => setValues({ ...values, date_fin: e.target.value })} />
+                <input className="border" type="date" name="date_fin" value={values.date_fin} onChange={(e) => setValues({ ...values, date_fin: e.target.value })} />
                 <button type="submit">Modifier</button>
             </form>
         </div>

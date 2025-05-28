@@ -52,7 +52,7 @@ class SkillController extends Controller
     public function edit($id)
     {
         $skill = Skill::find($id);
-        return Inertia::render('skills/edit_skill');
+        return Inertia::render('skills/edit_skill', ['skill' => $skill]);
     }
 
     /**

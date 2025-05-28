@@ -24,15 +24,15 @@ export default function EditProjet({ projet }) {
 
             <form onSubmit={modif}>
                 <label htmlFor="">Titre</label>
-                <input className="border" type="text" name="titre" onChange={(e) => setValues({...values, titre: e.target.value})} />
+                <input className="border" type="text" value={values.titre} name="titre" onChange={(e) => setValues({...values, titre: e.target.value})} />
                 <label htmlFor="">Déscription</label>
-                <input className="border" type="text" name="description" onChange={(e) => setValues({...values, description: e.target.value})} />
+                <input className="border" type="text" value={values.description} name="description" onChange={(e) => setValues({...values, description: e.target.value})} />
                 <label htmlFor="">Lien GitHub</label>
-                <input className="border" type="text" name="lien_github" onChange={(e) => setValues({...values, lien_github: e.target.value})} />
+                <input className="border" type="text" value={values.lien_github} name="lien_github" onChange={(e) => setValues({...values, lien_github: e.target.value})} />
                 <label htmlFor="">Lien démo</label>
-                <input className="border" type="text" name="lien_demo" onChange={(e) => setValues({...values, lien_demo: e.target.value})} />
+                <input className="border" type="text" value={values.lien_demo} name="lien_demo" onChange={(e) => setValues({...values, lien_demo: e.target.value})} />
                 <label htmlFor="">Image</label>
-                <input className="border" type="text" name="image" onChange={(e) => setValues({...values, image: e.target.value})} />
+                <input className="border" type="text" value={values.image} name="image" onChange={(e) => setValues({...values, image: e.target.value})} />
                 <button type="submit">Modifier</button>
             </form>
         </div>

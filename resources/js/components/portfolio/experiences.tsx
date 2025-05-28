@@ -13,7 +13,7 @@ export default function Experiences({ utilisateurs }) {
             <h1 className="text-5xl"><span className="font-bold">Section :</span> Experiences</h1>
 
             <Link href="/experience/create">
-                <button className="border p-1">Ajouter un nouveau projet</button>
+                <button className="border p-1">Ajouter une nouvelle experience</button>
             </Link>
 
             {utilisateurs.map((item, index) => (
