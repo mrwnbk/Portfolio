@@ -15,7 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('prenom');
             $table->string('nom');
-            $table->string('bio')->nullable();
+            $table->string('age');
+            $table->string('anniversaire');
+            $table->string('tel');
+            $table->text('bio')->nullable();
+            $table->string('ville');
             $table->text('photo')->nullable();
             $table->string('email')->unique();
             $table->timestamps();

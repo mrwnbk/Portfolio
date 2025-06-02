@@ -17,8 +17,8 @@ class ExperienceSeeder extends Seeder
             [
                 'titre' => 'Préparateur de commande',
                 'entreprise' => 'Legrand Group Belgium',
-                'date_debut' => '2022-06-01',
-                'date_fin' => '2024-01-01',
+                'date_debut' => '01/06/2022',
+                'date_fin' => '01/01/2024',
                 'utilisateur_id' => 1
             ]
         ]);

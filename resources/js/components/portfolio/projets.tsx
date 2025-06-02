@@ -5,44 +5,57 @@ export default function Projets({ utilisateurs }) {
     const supprimer = (e, id) => {
         e.preventDefault()
         router.delete(`/projet/delete/${id}`)
-        router.get('/')
+        router.get('/#projets')
     }
 
     return (
-        <div>
-            <h1 className="text-5xl"><span className="font-bold">Section :</span> Projets</h1>
+        <div id="projets" className="min-h-screen bg-[#0f172a] text-white py-2 relative flex flex-col">
+            <h1 className="text-4xl md:text-6xl font-bold text-center tracking-tight sticky top-0 bg-[#0f172a] z-10 pt-10">
+                Projets
+            </h1>
 
-            <Link href="/projet/create">
-                <button className="border p-1">Ajouter un nouveau projet</button>
-            </Link>
-
-            {utilisateurs.map((item, index) => (
-                <div key={index}>
-                    {item.projet.map((element, index) => (
-                        <div key={index}>
-                            <p>{element.titre}</p>
-                            <p>{element.description}</p>
-                            <a href={element.lien_github}>Lien GitHub</a>
-                            <p>{element.lien_demo}</p>
-                            <p>{element.image}</p>
-
-                            <Link href={`/projet/edit/${element.id}`}>
-                                <button className="cursor-pointer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                    </svg>
-                                </button>
-                            </Link>
-
-                            <button onClick={(e) => supprimer(e, element.id)} className="cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                                </svg>
-                            </button>
-                        </div>
-                    ))}
+            <div className="flex-grow px-5 py-10 bg-[#0f172a]">
+                <div className="flex justify-center mb-6">
+                    <Link href="/projet/create">
+                        <button className="bg-[#162447] hover:bg-[#16244772] text-white font-semibold py-2 px-4 rounded-md shadow"
+>
+                            Ajouter un nouveau projet
+                        </button>
+                    </Link>
                 </div>
-            ))}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
+                    {utilisateurs.map((item, index) =>
+                        item.projet.map((element, i) => (
+                            <div
+                                key={i}
+                                className="bg-gradient-to-br from-slate-800 via-slate-700 to-slate-600 rounded-xl shadow-md shadow-slate-900/30 p-4 w-full max-w-md hover:-translate-y-1 hover:shadow-2xl transition duration-300 border border-slate-500/40"
+                            >
+                                <h2 className="text-xl font-semibold mb-1 text-white">{element.titre}</h2>
+                                <p className="text-slate-300 text-sm mb-3">{element.description}</p>
+
+                                <div className="text-sm text-indigo-300 space-y-1 mb-4">
+                                    <a href={element.lien_github} className="hover:underline">Lien GitHub</a><br />
+                                    <a href={element.lien_demo} className="hover:underline">Lien Démo</a><br />
+                                    <span className="text-slate-400">Image : {element.image}</span>
+                                </div>
+
+                                <div className="flex gap-4 justify-end">
+                                    <Link href={`/projet/edit/${element.id}`}>
+                                        <button className="text-indigo-400 hover:text-indigo-300 transition text-sm">
+                                            ✏️ Modifier
+                                        </button>
+                                    </Link>
+                                    <button onClick={(e) => supprimer(e, element.id)} className="text-red-400 hover:text-red-300 transition text-sm">
+                                        🗑️ Supprimer
+                                    </button>
+                                </div>
+                            </div>
+                        ))
+                    )}
+                </div>
+            </div>
         </div>
+
     )
 }

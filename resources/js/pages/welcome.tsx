@@ -1,6 +1,8 @@
+import About from "@/components/portfolio/about";
 import Projets from "@/components/portfolio/projets";
 import Experiences from "@/components/portfolio/experiences";
 import Skills from "@/components/portfolio/skills";
+import AppLayout from "@/layouts/app-layout";
 
 export default function Welcome({ utilisateurs }) {
 
@@ -8,27 +10,22 @@ export default function Welcome({ utilisateurs }) {
 
 
     return (
-        <div className="p-6">
-            <h1 className="text-5xl">Welcome :</h1>
-
-            {utilisateurs.map((item, index) => (
-                <div key={index}>
-                    <img className="rounded-full w-30 h-30" src={item.photo} alt="" />
-                    <p>{item.prenom}</p>
-                    <p>{item.nom}</p>
-                    <p>{item.bio}</p>
-                    <p>{item.email}</p>
+        <AppLayout>
+            <div>
+                <div className="h-screen">
+                    <img src="/images/imgAbout.png" alt="" className="h-[100vh]" />
                 </div>
-            ))}
-            <hr />
+                <div className="h-16 bg-gradient-to-b from-[#060910] to-[#0f172a]"></div>
 
-            <Projets utilisateurs={utilisateurs} />
-            <hr />
-
-            <Experiences utilisateurs={utilisateurs} />
-            <hr />
-
-            <Skills utilisateurs={utilisateurs} />
-        </div>
+                <About utilisateurs={utilisateurs} />
+                <div className="h-16 bg-gradient-to-b from-[#0f172a] to-[#1b294b]"></div>
+                <Projets utilisateurs={utilisateurs} />
+                <div className="h-16 bg-gradient-to-b from-[#0f172a] to-[#1b294b]"></div>
+                <Experiences utilisateurs={utilisateurs} />
+                <div className="h-16 bg-gradient-to-b from-[#0f172a] to-[#1b294b]"></div>
+                <Skills utilisateurs={utilisateurs} />
+                <div className="h-16 bg-gradient-to-b from-[#0f172a] to-[#1b294b]"></div>
+            </div>
+        </AppLayout>
     )
 }

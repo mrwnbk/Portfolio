@@ -9,7 +9,7 @@ export default function Skills({ utilisateurs }) {
     }
 
     return (
-        <div>
+        <div className="h-screen" id="skills">
             <h1 className="text-5xl"><span className="font-bold">Section :</span> Skills</h1>
 
             <Link href="/skill/create">
