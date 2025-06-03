@@ -17,8 +17,7 @@ export default function Projets({ utilisateurs }) {
             <div className="flex-grow px-5 py-10 bg-[#0f172a]">
                 <div className="flex justify-center mb-6">
                     <Link href="/projet/create">
-                        <button className="bg-[#162447] hover:bg-[#16244772] text-white font-semibold py-2 px-4 rounded-md shadow"
->
+                        <button className="bg-[#162447] hover:bg-[#16244772] text-white font-semibold py-2 px-4 rounded-md shadow cursor-pointer">
                             Ajouter un nouveau projet
                         </button>
                     </Link>
@@ -42,11 +41,11 @@ export default function Projets({ utilisateurs }) {
 
                                 <div className="flex gap-4 justify-end">
                                     <Link href={`/projet/edit/${element.id}`}>
-                                        <button className="text-indigo-400 hover:text-indigo-300 transition text-sm">
+                                        <button className="text-indigo-400 hover:text-indigo-300 transition text-sm cursor-pointer">
                                             ✏️ Modifier
                                         </button>
                                     </Link>
-                                    <button onClick={(e) => supprimer(e, element.id)} className="text-red-400 hover:text-red-300 transition text-sm">
+                                    <button onClick={(e) => supprimer(e, element.id)} className="text-red-400 hover:text-red-300 transition text-sm cursor-pointer">
                                         🗑️ Supprimer
                                     </button>
                                 </div>
